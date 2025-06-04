@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const flags: []const []const u8 = &.{
+pub const default_flags: []const []const u8 = &.{
     "-std=c++17",
     "-fno-exceptions",
     "-fno-rtti",
@@ -11,6 +11,7 @@ pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
     const enable_opt = b.option(bool, "enable-opt", "Enables spirv-opt capability if present") orelse true;
+    const flags = b.option([]const []const u8, "flags", "Additional flags to pass to the compiler") orelse default_flags;
 
     // Upstream Sources
     const spirv_tools_upstream = b.dependency("SPIRV-Tools", .{});

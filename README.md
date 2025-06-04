@@ -4,6 +4,8 @@ Glslang ported to the Zig build system.
 
 Contributions or bug reports are welcome if behavior differs from official build system.
 
+Forked to allow changing compiler flags.
+
 ## Usage
 
 See [shader_compiler](https://github.com/Games-by-Mason/shader_compiler) for example usage.
@@ -17,7 +19,7 @@ See [build.zig.zon](build.zig.zon) for current version info.
 * The official build process has a web target for the `glslang` artifact, but this project does not. Contributions are welcome.
 * The official build process symlinks `glslang` to `glslangValidator`. This build outputs `glslangValidator` instead of `glslang` and does not provide a symlink because the library artifact is already named `glslang`.
 * The tests are not built.
-* Compiler flags for exceptions, rtti, etc are not configurable (see [build.zig](build.zig) for current values.)
+* Compiler flags for exceptions, rtti, etc are CONFIGURABLE in this fork (see [build.zig](build.zig))
 
 ## How To Change the Glslang Version
 
